@@ -1,6 +1,8 @@
 
+
 object ProjectEuler {
   def main(args: Array[String]) {
-    println("Hello World!")
+    val problem = new pe003
+    problem.solve
   }
 }
