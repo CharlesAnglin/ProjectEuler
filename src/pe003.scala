@@ -10,18 +10,18 @@ class pe003 {
   }
 
 
-  def primeDivisors (bound : Long) : Long = {
+  def primeDivisors(bound: Long): Long = {
     var newBound = bound
     var divisor = 2
     var largestDivisor = 0
 
-    while(divisor <= newBound){
-      if(newBound % divisor ==0){
-        newBound = newBound/divisor
+    while (divisor <= newBound) {
+      if (newBound % divisor == 0) {
+        newBound = newBound / divisor
         largestDivisor = divisor
-          while(newBound % divisor == 0){
-            newBound = newBound/divisor
-          }
+        while (newBound % divisor == 0) {
+          newBound = newBound / divisor
+        }
       }
       divisor += 1
     }
@@ -29,34 +29,33 @@ class pe003 {
   }
 
 
-
-//  def primeDivisors (bound : Long) : List[Long] = {
-//
-//    def recursive (bound : Long, primes : ArrayBuffer[Long]) : List[Long] = {
-//      val sqrtBound = sqrt(bound).toInt
-//      var newBound = 0
-//      var index = 2
-//      breakable {
-//        while (index < sqrtBound+ 1) {
-//          if (bound % index == 0) {
-//            primes += index
-//            newBound = (bound / index).toInt
-//            break
-//          }
-//          index += 1
-//        }
-//      }
-//      if(index == sqrtBound+1){
-//        primes += bound
-//        return primes.toList
-//      }else {
-//        return recursive(newBound.toLong, primes)
-//      }
-//    }
-//
-//    val primes : ArrayBuffer[Long] = ArrayBuffer.empty
-//    recursive(bound, primes)
-//  }
+  //  def primeDivisors (bound : Long) : List[Long] = {
+  //
+  //    def recursive (bound : Long, primes : ArrayBuffer[Long]) : List[Long] = {
+  //      val sqrtBound = sqrt(bound).toInt
+  //      var newBound = 0
+  //      var index = 2
+  //      breakable {
+  //        while (index < sqrtBound+ 1) {
+  //          if (bound % index == 0) {
+  //            primes += index
+  //            newBound = (bound / index).toInt
+  //            break
+  //          }
+  //          index += 1
+  //        }
+  //      }
+  //      if(index == sqrtBound+1){
+  //        primes += bound
+  //        return primes.toList
+  //      }else {
+  //        return recursive(newBound.toLong, primes)
+  //      }
+  //    }
+  //
+  //    val primes : ArrayBuffer[Long] = ArrayBuffer.empty
+  //    recursive(bound, primes)
+  //  }
 
 
   /**
@@ -65,29 +64,28 @@ class pe003 {
     * @param bound Int
     * @return list of prime factors of bound
     */
-  def primeList(bound : Long) : List[Int] = {
+  def primeList(bound: Long): List[Int] = {
 
-    def createPrimeList(list : List[Int], primes: ArrayBuffer[Int]): ArrayBuffer[Int] = {
-      if(list.isEmpty){
+    def createPrimeList(list: List[Int], primes: ArrayBuffer[Int]): ArrayBuffer[Int] = {
+      if (list.isEmpty) {
         primes
-      }else{
-        if(bound % list(0) == 0){
+      } else {
+        if (bound % list(0) == 0) {
           primes += list(0)
         }
-        val filteredList = list.filter(num => num%list(0)!=0)
-        createPrimeList(filteredList,primes)
+        val filteredList = list.filter(num => num % list(0) != 0)
+        createPrimeList(filteredList, primes)
       }
     }
 
-    val list : List[Int] = List.range(2, sqrt(bound).toInt)
-    val primes : ArrayBuffer[Int] = ArrayBuffer.empty
+    val list: List[Int] = List.range(2, sqrt(bound).toInt)
+    val primes: ArrayBuffer[Int] = ArrayBuffer.empty
     createPrimeList(list, primes).toList
   }
 
 
-
-//not used
-  def primeChecker(prime : Int) : Boolean = {
+  //not used
+  def primeChecker(prime: Int): Boolean = {
     val nums = 2 to sqrt(prime).toInt
     for (num <- nums) {
       if (prime % num == 0) {
