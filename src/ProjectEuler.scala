@@ -4,7 +4,7 @@ object ProjectEuler {
   def main(args: Array[String]) {
     val start = System.currentTimeMillis()
 
-    val problem = new pe008
+    val problem = new pe009
     problem.solve
 
     val totalTime = System.currentTimeMillis - start
