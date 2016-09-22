@@ -1,6 +1,6 @@
 class pe008 {
 
-//  Elapsed time: 507 ms
+//  Elapsed time: 395 ms
 
   def solve = {
     println(findGreatestProduct(13, number))
@@ -36,8 +36,8 @@ class pe008 {
       if (numbersLeft == 0) {
         accumulator
       } else {
-        println(number(index).asDigit)
-        calcProduct(index + 1, numbersLeft - 1, accumulator * number(index).asDigit)
+        println(bigNumber(index).asDigit)
+        calcProduct(index + 1, numbersLeft - 1, accumulator * bigNumber(index).asDigit)
       }
     }
 
