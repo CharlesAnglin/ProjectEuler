@@ -2,6 +2,8 @@ import scala.collection.mutable.ArrayBuffer
 
 class pe001 {
 
+//  Elapsed time: 258 ms
+
   def solve = {
     val numbers = new ArrayBuffer[Int]
     for (num <- 0 to 999) {

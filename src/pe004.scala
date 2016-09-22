@@ -1,5 +1,7 @@
 class pe004 {
 
+//  Elapsed time: 415 ms
+
   def solve = {
     println(findLargestPalindrome)
   }

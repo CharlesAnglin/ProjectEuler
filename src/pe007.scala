@@ -1,5 +1,7 @@
 class pe007 {
 
+//  Elapsed time: 4 sec, 844 ms
+
   def solve = {
     val primes = primesUnder(150000)
     println("no of primes " + primes.length)

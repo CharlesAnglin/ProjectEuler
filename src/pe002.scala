@@ -2,6 +2,8 @@ import scala.collection.mutable.ArrayBuffer
 
 class pe002 {
 
+//  Elapsed time: 493 ms
+
   def solve = {
     val fibNums = ArrayBuffer(1, 2)
     while (fibNums.last < 4000000) {

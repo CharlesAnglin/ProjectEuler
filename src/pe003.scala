@@ -4,6 +4,8 @@ import scala.util.control.Breaks._
 
 class pe003 {
 
+//  Elapsed time: 1 sec, 444 ms
+
   def solve = {
     val num = BigInt(600851475143L)
     println(primeDivisors(600851475143L))

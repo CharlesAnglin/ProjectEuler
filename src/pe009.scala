@@ -1,5 +1,7 @@
 class pe009 {
 
+//  Elapsed time: 476 ms
+
   def solve = {
     println(findTriples)
   }

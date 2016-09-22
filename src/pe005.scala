@@ -1,5 +1,7 @@
 class pe005 {
 
+//  Elapsed time: 405 ms
+
   def solve = {
 //    println(2 * 2 * 2 * 2 * 3 * 3 * 5 * 7 * 11 * 13 * 17 * 19)
     println(smallestEvenlyDivisible(20))

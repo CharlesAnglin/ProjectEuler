@@ -1,5 +1,7 @@
 class pe006 {
 
+//  Elapsed time: 1 sec, 537 ms
+
   def solve = {
     var solution = squareOfSums(100) - sumOfSquares(100)
     println(solution)

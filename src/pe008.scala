@@ -1,5 +1,7 @@
 class pe008 {
 
+//  Elapsed time: 507 ms
+
   def solve = {
     println(findGreatestProduct(13, number))
   }
