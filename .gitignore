@@ -55,3 +55,5 @@ fabric.properties
 # modules.xml
 /.idea/
 /ProjectEuler.iml
+project/
+target/
