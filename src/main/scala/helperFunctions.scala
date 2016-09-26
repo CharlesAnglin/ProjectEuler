@@ -12,6 +12,8 @@ object helperFunctions {
     }
   }
 
+  def fib(a: Int = 0, b: Int = 1): Stream[Int] = a #:: fib(b, a + b)
+
   def primesUnder(number: Int) = {
 
     def findPrimes(primes: List[Int], range: List[Int]): List[Int] = {

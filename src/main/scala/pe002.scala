@@ -2,9 +2,11 @@ import scala.collection.mutable.ArrayBuffer
 
 class pe002 {
 
-//  Elapsed time: 493 ms
+//  Elapsed time: 190 ms
 
-  def solve = {
+  def solve = println(helperFunctions.fib().takeWhile(_<4000000).filter(_%2==0).sum)
+
+  def solve1 = {
     val fibNums = ArrayBuffer(1, 2)
     while (fibNums.last < 4000000) {
       fibNums += fibNums(fibNums.length - 2) + fibNums.last
