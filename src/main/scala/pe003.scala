@@ -11,7 +11,6 @@ class pe003 {
     println(primeDivisors(600851475143L))
   }
 
-
   def primeDivisors(bound: Long): Long = {
     var newBound = bound
     var divisor = 2

@@ -12,7 +12,15 @@ object helperFunctions {
     }
   }
 
-  def fib(a: Int = 0, b: Int = 1): Stream[Int] = a #:: fib(b, a + b)
+  val fibonacciStream = {
+    def fib(a: Int, b: Int): Stream[Int] = a #:: fib(b, a + b)
+    fib(0,1)
+  }
+
+  val primeStream = {
+      def p(stream: Stream[Int]): Stream[Int] = stream.head #:: p(stream.filter(_ % stream.head != 0))
+      p(Stream.from(2))
+  }
 
   def primesUnder(number: Int) = {
 

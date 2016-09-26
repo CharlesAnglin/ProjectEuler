@@ -4,7 +4,7 @@ class pe002 {
 
 //  Elapsed time: 190 ms
 
-  def solve = println(helperFunctions.fib().takeWhile(_<4000000).filter(_%2==0).sum)
+  def solve = println(helperFunctions.fibonacciStream.takeWhile(_<4000000).filter(_%2==0).sum)
 
   def solve1 = {
     val fibNums = ArrayBuffer(1, 2)
