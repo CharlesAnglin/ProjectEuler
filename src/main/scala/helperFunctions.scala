@@ -26,7 +26,7 @@ object helperFunctions {
   //outrageously fast - why???
   lazy val ps: Stream[Int] = 2 #:: Stream.from(3).filter(i => ps.takeWhile(j => j * j <= i).forall(i % _ > 0))
 
-  def primesUnder(number: Int) = {
+  def primesUnder(number: Int) = { // for 1000000 takes 2 min, 28 sec, 601 ms with 3085865210 traversals
     //Starts to be faster than streams when primes exceed 10000, significantly faster for primes over 20000.
     def findPrimes(primes: Vector[Int], range: Vector[Int]): Vector[Int] = {
       if (range.isEmpty) {
@@ -38,8 +38,26 @@ object helperFunctions {
     findPrimes(Vector.empty, Vector.range(2, number))
   }
 
-  def findLargestPrime(number: Int) = {
+  def primesUnder2(number: Int) = { // completes 20,000,000 in 49 sec
     (2 to number).filter(i => (2 to math.sqrt(i).toInt).forall(i % _ > 0))
   }
+
+  def primesUnder3(number: Int) = { // for 1000000 takes 2 sec, 229 ms with 67740404 traversals.
+    // completes 20,000,000 in 31 sec
+    def findPrimes(primes: Vector[Int], counter: Int) : Vector[Int]= {
+      if(counter == 1){
+        return primes
+      } else if ((2 to math.sqrt(counter).toInt).forall(counter % _ > 0)) {
+        findPrimes(counter +: primes, counter -1)
+      } else {
+        findPrimes(primes, counter -1)
+      }
+    }
+    findPrimes(Vector.empty, number)
+  }
+
+//  def primesUnder4(number: Int) = {
+//
+//  }
 
 }
