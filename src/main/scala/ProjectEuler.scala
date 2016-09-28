@@ -14,15 +14,21 @@ object ProjectEuler extends App {
 
   val start2 = System.currentTimeMillis()
 
-  println(helperFunctions.primesUnder(100000).last)
+//  println(helperFunctions.primesUnder(1000000).last)
 
   helperFunctions.elapsedTime(start2)
 
   val start3 = System.currentTimeMillis()
 
-  println(helperFunctions.primesUnder3(100000).last)
+  println(helperFunctions.primesUnder3(1000000).last)
 
   helperFunctions.elapsedTime(start3)
+
+  val start4 = System.currentTimeMillis()
+
+  println(helperFunctions.primesUnder4(1000000).last)
+
+  helperFunctions.elapsedTime(start4)
 
 
 

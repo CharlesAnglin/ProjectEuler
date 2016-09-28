@@ -56,8 +56,24 @@ object helperFunctions {
     findPrimes(Vector.empty, number)
   }
 
-//  def primesUnder4(number: Int) = {
-//
-//  }
+  def primesUnder4(number: Int) = {
+    def appender(num: Int) : Vector[Int] = {
+      def helper(times: Int, vector : Vector[Int]): Vector[Int] = {
+        if(times == 1){
+          return vector
+        }
+        helper(times -1, (num * times) +: vector)
+      }
+      helper((number / num), Vector.empty)
+    }
+    def findPrimes(num: Int, nonPrimes: Vector[Int]): Vector[Int] = {
+      if(num > number){
+        return nonPrimes
+      } else {
+        findPrimes(num + 1, nonPrimes ++ appender(num))
+      }
+    }
+    (2 to number).toVector.diff(findPrimes(2, Vector.empty))
+  }
 
 }
